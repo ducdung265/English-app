@@ -1,0 +1,27 @@
+[
+    {
+        "name": "12345",
+        "desc": "Tên chỉ có số",
+        "isvalid": true
+    },
+    {
+        "name": "abcde",
+        "desc": "Tên chỉ có chữ",
+        "isvalid": true
+    },
+    {
+        "name": "Abcd1234",
+        "desc": "Tên có chữ và số",
+        "isvalid": true
+    },
+    {
+        "name": " ABCD ",
+        "desc": "Tên có khoảng trắng",
+        "isvalid": true
+    },
+    {
+        "name": "  ",
+        "desc": "Tên rỗng",
+        "isvalid": false
+    }
+]
