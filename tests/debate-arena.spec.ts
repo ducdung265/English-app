@@ -44,24 +44,31 @@ test('Nhập tên có khoảng trắng - tự động trim phần thừa', async
   await expect(debateArenaPage.buttonTaoPhong).toBeEnabled()
 })
 
-// vào phòng
-test('Đã nhập tên - nhập mã phòng ko tồn tại - hiển thị error msg', async () => {
-  await debateArenaPage.nhapTen('111111')
-  await debateArenaPage.nhapMaPhong('ABCD')
-  await debateArenaPage.clickVaoPhong()
-  await expect(debateArenaPage.errorMessage).toBeVisible();
-})
+test.describe('Vào phòng', () => {
+  test('Đã nhập tên - nhập mã phòng ko tồn tại - hiển thị error msg', async () => {
+    await debateArenaPage.nhapTen('111111')
+    await debateArenaPage.nhapMaPhong('ABCD')
+    await debateArenaPage.clickVaoPhong()
+    await expect(debateArenaPage.errorMessage).toBeVisible();
+  })
 
-test('Chưa nhập tên - nhập mã phòng ko tồn tại - button vào phòng disabled', async () => {
-  await debateArenaPage.nhapTen('')
-  await debateArenaPage.nhapMaPhong('ABCD')
-  await expect(debateArenaPage.buttonVaoPhong).toBeDisabled();
-})
+  test('Đã nhập tên - ko nhập mã phòng - button vào phòng disabled', async () => {
+    await debateArenaPage.nhapTen('111111')
+    await debateArenaPage.clickVaoPhong()
+    await expect(debateArenaPage.buttonVaoPhong).toBeDisabled();
+  })
 
-test('Nhập mã phòng 5 ký tự - hiển thị tối đa 4 ký tự', async () => {
-  await debateArenaPage.nhapTen('111111')
-  await debateArenaPage.nhapMaPhong('ABCDE')
-  await expect(debateArenaPage.inputMaPhong).toHaveValue('ABCD');
+  test('Chưa nhập tên - nhập mã phòng ko tồn tại - button vào phòng disabled', async () => {
+    await debateArenaPage.nhapTen('')
+    await debateArenaPage.nhapMaPhong('ABCD')
+    await expect(debateArenaPage.buttonVaoPhong).toBeDisabled();
+  })
+
+  test('Nhập mã phòng 5 ký tự - hiển thị tối đa 4 ký tự', async () => {
+    await debateArenaPage.nhapTen('111111')
+    await debateArenaPage.nhapMaPhong('ABCDE')
+    await expect(debateArenaPage.inputMaPhong).toHaveValue('ABCD');
+  })
 })
 
 // chọn độ khó
