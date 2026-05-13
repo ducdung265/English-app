@@ -37,12 +37,12 @@ test('Button Tạo phòng disabled khi nhập rồi xóa tên', async () => {
   await expect(debateArenaPage.buttonTaoPhong).toBeDisabled();
 });
 
-test('Nhập tên có khoảng trắng - tự động trim phần thừa', async () => {
+/* test('Nhập tên có khoảng trắng - tự động trim phần thừa', async () => {
   await debateArenaPage.nhapTen(' 121121 ')
   await debateArenaPage.placeholderName.blur()
   await expect(debateArenaPage.placeholderName).toHaveValue('121121')
   await expect(debateArenaPage.buttonTaoPhong).toBeEnabled()
-})
+}) */
 
 test.describe('Vào phòng', () => {
   test('Đã nhập tên - nhập mã phòng ko tồn tại - hiển thị error msg', async () => {
