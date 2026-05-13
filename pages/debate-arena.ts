@@ -20,7 +20,7 @@ export class DebateArenaPage {
         this.buttonTaoPhong = page.getByRole('button', { name: 'Tạo phòng' })
         this.inputName = page.getByPlaceholder('Nhập tên của bạn...')
         this.inputMaPhong = page.getByRole('textbox', { name: 'Nhập mã phòng' })
-        this.buttonVaoPhong = page.getByRole('button', { name: 'Vào phòng' })
+        this.buttonVaoPhong = page.locator('.lobby-join-btn')
         this.errorMessage = page.getByText('Room not found')
         this.diffSlider = page.getByRole('slider')
         this.diffLevel = page.locator('span.diff-level')
