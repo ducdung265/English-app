@@ -54,7 +54,7 @@ test.describe('Vào phòng', () => {
 
   test('Đã nhập tên - ko nhập mã phòng - button vào phòng disabled', async () => {
     await debateArenaPage.nhapTen('111111')
-    await debateArenaPage.clickVaoPhong()
+    //await debateArenaPage.clickVaoPhong()
     await expect(debateArenaPage.buttonVaoPhong).toBeDisabled();
   })
 
