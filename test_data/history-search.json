@@ -1,0 +1,7 @@
+[
+  { "keyword": "Minh", "desc": "tên học sinh tồn tại", "expectedMatch": true },
+  { "keyword": "SNNH", "desc": "mã phòng tồn tại", "expectedMatch": true },
+  { "keyword": "NamNam", "desc": "tên AI Partner tồn tại", "expectedMatch": true },
+  { "keyword": "XYZXYZ", "desc": "từ khóa không tồn tại", "expectedMatch": false },
+  { "keyword": "   ", "desc": "chỉ có khoảng trắng", "expectedMatch": false }
+]
